@@ -1,0 +1,25 @@
+<div class="contact-box">
+  <div class="search-view">
+    <div class="search-bar">
+      <input type="text">
+    </div>
+  </div>
+  <div class="contact-list">
+    <ul>
+      <li
+        *ngFor="let contact of contacts"
+        (click)="selectContact(contact)"
+        [class.selected]="contact === selectedContact"
+      >
+        <div class="contact-icon"></div>
+        <label>
+          {{ contact.name }}
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="bottom-menu">
+    <span>+</span>
+  </div>
+</div>
+<app-contact-detail [contact]="selectedContact"></app-contact-detail>

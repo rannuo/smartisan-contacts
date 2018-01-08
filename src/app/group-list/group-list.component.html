@@ -1,0 +1,19 @@
+<div class="title-bar">
+  <h1>联系人</h1>
+</div>
+<div class="group-list">
+  <ul>
+    <li (click)="selectGroupAll()" [class.selected]="isSelectedAll">全部联系人</li>
+    <li (click)="selectGroupFav()" [class.selected]="isSelectedFav">收藏</li>
+    <li
+      *ngFor="let group of groups"
+      (click)="selectGroup(group)"
+      [class.selected]="isSelectedGroup(group)"
+    >{{ group.name }}</li>
+  </ul>
+</div>
+<div class="bottom-menu">
+  <span>
+    ···
+  </span>
+</div>

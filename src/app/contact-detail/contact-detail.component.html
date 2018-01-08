@@ -1,0 +1,25 @@
+<div class="detail-tool-bar">
+  <button>编辑</button>
+</div>
+<div class="contact-detail-container" *ngIf="contact; else loading">
+  <div class="contact-detail">
+    <div class="contact-detail-header">
+      <div class="contact-detail-icon">
+        <div class="inner-image"></div>
+      </div>
+      <div class="contact-detail-name">
+        <h1>{{contact.name}}</h1>
+      </div>
+    </div>
+    <div class="contact-detail-body">
+      <div class="contact-detail-list-item">
+        <div class="detail-label">电话</div>
+        <div class="detail-field">{{contact.phone | fmtPhonenum}}</div>
+      </div>
+      <div class="detail-item-border"></div>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <h1>Loading</h1>
+</ng-template>
